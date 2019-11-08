@@ -28,6 +28,7 @@ studentCtrl.addStudent = async (req, res) =>{
     console.log(student);
     student.name = req.body.name;
     student.address = req.body.address;
+    student.studies = req.body.studies
     student.phone = req.body.phone;
     console.log(student);
     //*****************
@@ -46,5 +47,11 @@ studentCtrl.deleteStudent = async (req, res) =>{
     await Student.findByIdAndDelete(req.params.id);
     res.json({status: "estudinate eliminado"});
 }
+
+studentCtrl.getByGrado = async (req,res) =>{
+    const student = await Student.find({studies: req.params.grado});
+    res.json(student);
+}
+
 
 module.exports  = studentCtrl;

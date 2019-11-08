@@ -14,5 +14,8 @@ router.get('/api/student/:id', student.getStudents);
 //Eliminar estudiante
 router.delete('/api/student/:id', student.deleteStudent);
 
+//Obtener estudiantes por grado
+router.get('/api/student/grado/:grado', student.getByGrado);
+
 
 module.exports = router;

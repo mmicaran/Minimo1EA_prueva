@@ -1,0 +1,55 @@
+<div class="container">
+  <div class="row">
+    <div class="col s5">
+      <div class="card">
+        <div class="card-content">
+          <form #studentForm="ngForm" (ngSubmit)="postStudent(studentForm)">
+            <input type="hidden" name="_id" #_id="ngModel" [(ngModel)]="studentService.selectedStudent._id"> 
+            <div class="row">
+              <div>Name:</div>
+              <nav>
+                <div class="input-field col s12">
+                  <input type="text" name="name" #name="ngModel" [(ngModel)]="studentService.selectedStudent.name" placeholder="Enter your name">
+                </div>
+              </nav>
+              <div>Address:</div>
+              <nav>
+                <div class="input-field col s12">
+                    <input type="text" name="address" #address="ngModel" [(ngModel)]="studentService.selectedStudent.address" placeholder="Enter your address">
+                  </div>
+              </nav>
+              <div>Grado:</div>
+              <nav>
+                <div class="input-field col s12">
+                  <select name="grado" #studies="ngModel" [(ngModel)]="studentService.selectedStudent.studies"> 
+                    <option value="tele" #studies="ngModel" [(ngModel)]="studentService.selectedStudent.studies">Telematica</option>
+                    <option value="sis" #studies="ngModel" [(ngModel)]="studentService.selectedStudent.studies">Sistemas</option>
+                    <option value="aero" #studies="ngModel" [(ngModel)]="studentService.selectedStudent.studies">Aeros</option>
+                  </select>
+                </div>
+              </nav>
+              <div>Phone 1:</div>
+              <nav>
+                  <div class="input-field col s12">
+                      <input type="text" name ="phone1" #phone1="ngModel" [(ngModel)]="studentService.selectedStudent.phone1" placeholder="Enter your phone 1">
+                    </div>
+              </nav>
+              <div>Phone 2:</div>
+              <nav>
+                  <div class="input-field col s12">
+                      <input type="text" name ="phone2" #phone2="ngModel" [(ngModel)]="studentService.selectedStudent.phone2" placeholder="Enter your phone 2">
+                    </div>
+              </nav>
+                      <div class="card-action">
+                        <div class="input-field col s12">
+                          <button class="btn right" (click)="resetForm(studentForm)">Clean</button>
+                          <button class="btn right" style="margin-left: 2px;">Save</button>
+                        </div>
+                      </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

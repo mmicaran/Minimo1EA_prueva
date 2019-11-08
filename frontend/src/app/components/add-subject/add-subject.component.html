@@ -1,0 +1,26 @@
+<div class="container">
+        <div class="row">
+          <div class="col s5">
+            <div class="card">
+              <div class="card-content">
+                <form #subjectForm="ngForm" (ngSubmit)="postSubject(subjectForm)">
+                  <input type="hidden" name="_id" #_id="ngModel" [(ngModel)]="subjectService.selectedSubject._id"> 
+                  <div class="row">
+                      <div class="input-field col s12">
+                        <input type="text" name="name" #name="ngModel" [(ngModel)]="subjectService.selectedSubject.name" placeholder="Enter subject name">
+                      </div>
+                            <div class="card-action">
+                              <div class="input-field col s12">
+                                <button class="btn right" (click)="resetForm(subjectForm)">Clean</button>
+                                <button class="btn right" style="margin-left: 2px;">Save</button>
+                              </div>
+                            </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      
